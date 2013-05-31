@@ -2,6 +2,7 @@
 steam_path=~/.local/share/Steam
 ck2_path=%(steam_path)s/SteamApps/common/Crusader Kings II
 ck2_bin=%(ck2_path)s/ck2
+ck2_user=~/Documents/Paradox Interactive/Crusader Kings II
 
 #Uncomment to set default mods and DLC
 #[ck2]

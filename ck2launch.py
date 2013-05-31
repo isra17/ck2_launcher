@@ -10,6 +10,8 @@ parser = argparse.ArgumentParser(description=
     'Launcher for Crusader King II that allow to select mods and DLC')
 parser.add_argument('-m', '--mods', nargs='*', help='Mods loaded')
 parser.add_argument('-d', '--exclude-dlc', nargs='*', help='DLCs excluded')
+parser.add_argument('--list-mods', action='store_true', help='List mods')
+parser.add_argument('--list-dlc', action='store_true', help='List DLCs')
 
 def getConfig():
     config = configparser.ConfigParser()
@@ -50,7 +52,7 @@ def getOptions():
     config['ck2']['mods'] = args.mods
     config['ck2']['exclude_dlc'] = args.exclude_dlc
 
-    return config
+    return (config, args)
 
 def launchck2(options):
     ck2_path = os.path.expanduser(options['steam']['ck2_bin'])
@@ -62,9 +64,35 @@ def launchck2(options):
 
     os.execvp(ck2_path, args)
 
+def getName(iniFile):
+    f = open(iniFile)
+    for line in f.readlines():
+        sline = line.split('=')
+        if len(sline) == 2 and sline[0].strip() == 'name':
+            print('\t' + sline[1].strip())
+
+def list_el(folder, extension):
+    folder = os.path.expanduser(folder)
+    for f in os.listdir(folder):
+        if f.endswith(extension):
+            getName(folder + '/' + f)
+
+def list_mods(options):
+    print('Mods:')
+    list_el(options['steam']['ck2_user'] + '/mod', '.mod')
+
+def list_dlc(options):
+    print('DLCs:')
+    list_el(options['steam']['ck2_path'] + '/dlc', '.dlc')
+
 def main():
-    options = getOptions()
-    launchck2(options)
+    options, args = getOptions()
+    if args.list_mods:
+        list_mods(options)
+    elif args.list_dlc:
+        list_dlc(options)
+    else:
+        launchck2(options)
 
 
 if __name__ == '__main__':
