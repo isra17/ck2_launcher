@@ -62,6 +62,8 @@ def launchck2(options):
     args.extend(list(map(lambda dlc: '-exculde_dlc=dlc/' + dlc,
             options['ck2']['exclude_dlc'])))
 
+    print('Launch ck2 with options:')
+    print(args)
     os.execvp(ck2_path, args)
 
 def getName(iniFile):
@@ -69,13 +71,15 @@ def getName(iniFile):
     for line in f.readlines():
         sline = line.split('=')
         if len(sline) == 2 and sline[0].strip() == 'name':
-            print('\t' + sline[1].strip())
+            return sline[1].strip()
 
 def list_el(folder, extension):
+    print("[Name]\t\t[Description]")
     folder = os.path.expanduser(folder)
     for f in os.listdir(folder):
         if f.endswith(extension):
-            getName(folder + '/' + f)
+            name = getName(folder + '/' + f)
+            print('"' + f + '":\t' + name)
 
 def list_mods(options):
     print('Mods:')
