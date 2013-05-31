@@ -59,7 +59,7 @@ def launchck2(options):
     args = [ck2_path]
     args.extend(list(map(lambda mod: '-mod=mod/' + mod,
             options['ck2']['mods'])))
-    args.extend(list(map(lambda dlc: '-exculde_dlc=dlc/' + dlc,
+    args.extend(list(map(lambda dlc: '-exclude_dlc=dlc/' + dlc,
             options['ck2']['exclude_dlc'])))
 
     print('Launch ck2 with options:')
