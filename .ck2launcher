@@ -1,0 +1,11 @@
+[steam]
+steam_path=~/.local/share/Steam
+ck2_path=%(steam_path)s/SteamApps/common/Crusader Kings II
+ck2_bin=%(ck2_path)s/ck2
+
+#Uncomment to set default mods and DLC
+#[ck2]
+#mods=Game of throne
+#exclude_dlc=
+#    dlc1
+#    dlc2
