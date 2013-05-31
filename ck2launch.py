@@ -43,6 +43,7 @@ def getArgs():
 
 def getOptions():
     config = getConfig()
+    print(config)
     parser.set_defaults(**{
         'mods': config['ck2'].get('mods',[]),
         'exclude_dlc': config['ck2'].get('exclude_dlc',[])

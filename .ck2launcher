@@ -4,9 +4,48 @@ ck2_path=%(steam_path)s/SteamApps/common/Crusader Kings II
 ck2_bin=%(ck2_path)s/ck2
 ck2_user=~/Documents/Paradox Interactive/Crusader Kings II
 
-#Uncomment to set default mods and DLC
-#[ck2]
-#mods=Game of throne
-#exclude_dlc=
-#    dlc1
-#    dlc2
+#### Uncomment to set default mods and DLC
+[ck2]
+#mods=A Game of Thrones.mod
+#Dynasty Coat of Arms Pack 1
+#exclude_dlc=dlc001.dlc
+#### Mediterranean Portraits
+# dlc014.dlc
+####  African Portraits
+# dlc013.dlc
+#### Songs of the Caliph
+# dlc009.dlc
+#### The Republic
+# dlc022.dlc
+#### Mongol Face Pack
+# dlc002.dlc
+#### Songs of Byzantium
+# dlc017.dlc
+#### Russian Unit Portraitsack
+# dlc015.dlc
+#### The Sword of Islam
+# dlc007.dlc
+#### Songs of Faith
+# dlc004.dlc
+#### Songs of Prosperity
+# dlc023.dlc
+#### Russian Portraits
+# dlc016.dlc
+#### Songs of the Rus
+# dlc019.dlc
+#### African Unit Pack
+# dlc008.dlc
+#### Sunset Invasion
+# dlc018.dlc
+#### Songs of Albion
+# dlc003.dlc
+#### Ruler Designer
+# dlc005.dlc
+#### Byzantine Unit Pack
+# dlc012.dlc
+#### Legacy of Rome
+# dlc011.dlc
+#### Dynasty Coat of Arms Pack 2
+# dlc010.dlc
+#### Songs of the Holy Land
+# dlc006.dlc
